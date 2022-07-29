@@ -4,7 +4,8 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
     <!-- replace hace que enlaza el archivo template y el nombre head  -->
     <head th:replace="plantilla/template::head"></head>
     <!-- Internacializacion i18n el 18 es la cantidad  -->
@@ -13,6 +14,7 @@ and open the template in the editor.
         <h1 th: text="${titulo}"></h1>
         <!-- El # hace referencia a messages -->
         <h1 th: text="#{cliente.nombre}"></h1>
+        <span sec:authentication="name"></span>
         <table class="table table-dark table-striped">
       
             <thead class="thead-dark">
